@@ -1,0 +1,33 @@
+
+import random
+
+
+print("Welcome to the Random Password Generator")
+strongweak = input("Would you like to generate a strong or weak password? \n Type 'strong' for strong password and 'weak' for weak password': ")
+if strongweak == "weak":
+        weak = ["book", "salad", "bottle", "girl", "pen", "cup", "read", "stir", "orange", "lasagna", "picture", "perfume", "box", "scissors",
+                "can", "phone", "smart", "apple", "samsung", "hair", "brush", "glue", "tissue", "time", "frame", "nose", "cream", "magnet", "sticker"]
+        numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        weakpassword = [(random.choice(weak)), (random.choice(weak)), (random.choice(numbers))]
+        weakpassword = "".join(map(str, weakpassword))
+        print(weakpassword)
+        exit()
+
+else:
+    def letter_range(start="a", stop="{", step=1):
+        for ord_ in range(ord(start.lower()), ord(stop.lower()), step):
+            yield chr(ord_)
+    def letter_range_upper(start="A", stop="{", step=1):
+        for ord_u in range(ord(start.upper()), ord(stop.upper()), step):
+            yield chr(ord_u)
+
+    stronglower = list(letter_range("a", "z"))
+    strongupper = list(letter_range_upper("A", "Z"))
+    strongdigits = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    strongsymbols =  ['@', '!', '$', '%', '^', '&', '*', '_', '-', '>', '<', '?']
+    strongpassword = [(random.choice(list(letter_range("a", "z")))), (random.choice(list(letter_range("a", "z")))), (random.choice(list(letter_range("a", "z")))), (random.choice(list(letter_range("a", "z")))),  (random.choice(list(letter_range_upper("A", "Z")))), (random.choice(list(letter_range_upper("A", "Z")))), (random.choice(list(letter_range_upper("A", "Z")))), (random.choice(list(letter_range_upper("A", "Z")))), (random.choice(strongdigits)), (random.choice(strongdigits)), (random.choice(strongdigits)), (random.choice(strongdigits)), (random.choice(strongsymbols)), (random.choice(strongsymbols)), (random.choice(strongsymbols)), (random.choice(strongsymbols))]
+
+strongpassword = strongpassword
+random.shuffle(strongpassword)
+strongpassword = "".join(map(str, strongpassword))
+print(strongpassword)
